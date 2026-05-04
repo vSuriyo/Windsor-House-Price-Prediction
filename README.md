@@ -102,7 +102,7 @@ Linear models outperformed tree-based models, confirming that Windsor house pric
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/vsuriyo/windsor-house-price-prediction.git
+git clone https://github.com/suriyo/windsor-house-price-prediction.git
 cd windsor-house-price-prediction
 ```
 
@@ -111,7 +111,7 @@ cd windsor-house-price-prediction
 pip install -r requirements.txt
 ```
 
-3. **Download the dataset** from [Kaggle](https://www.kaggle.com/datasets/zahrayazdani/house-prices-in-the-city-of-windsor-canada) and place the CSV in the project folder
+3. **Download the dataset** from [Kaggle](https://www.kaggle.com/datasets/deepikakoche/house-prices-in-the-city-of-windsor-canada) and place the CSV in the project folder
 
 4. **Launch Jupyter and open the notebook**
 ```bash

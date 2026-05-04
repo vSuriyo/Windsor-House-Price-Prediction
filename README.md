@@ -1,6 +1,6 @@
-# 🏠 Windsor, Ontario — Residential House Price Prediction
+# Windsor, Ontario — Residential House Price Prediction
 
-**Author:** Van Suriyo &nbsp;|&nbsp; **Dataset:** 546 Homes in Windsor, Ontario, Canada &nbsp;|&nbsp; **Source:** [Kaggle](https://www.kaggle.com/datasets/zahrayazdani/house-prices-in-the-city-of-windsor-canada)
+**Author:** Van Suriyo &nbsp;|&nbsp; **Dataset:** 546 Homes in Windsor, Ontario, Canada &nbsp;|&nbsp; **Source:** [Kaggle]
 
 ---
 

@@ -3,53 +3,54 @@
 **Author:** Van Suriyo &nbsp;|&nbsp; **Dataset:** 546 Homes in Windsor, Ontario, Canada &nbsp;|&nbsp; **Source:** [[Kaggle]](https://www.kaggle.com/code/suriyo/windsor-house-prices-prediction)
 ---
 
-## 📋 Overview
+## Overview
 
-This project builds and compares four regression models to predict residential sale prices in Windsor, Ontario using property attributes. The goal is to provide data-driven insight for buyers, sellers, and real estate agents operating in mid-sized Canadian housing markets.
+This project builds and compares four regression models to predict residential sale prices in Windsor, Ontario using property attributes. The goal is to provide data-driven insight for buyers, sellers, and real estate agents.
 
 **Stakeholders who benefit from this analysis:**
-- 🏡 **Buyers** — understand what features drive price premiums
-- 💰 **Sellers** — identify which improvements yield the highest return
-- 📊 **Real estate agents** — set data-backed listing prices with confidence
+- **Buyers** — understand what features drive price premiums
+- **Sellers** — identify which improvements yield the highest return
+- **Real estate agents** — set data-backed listing prices with confidence
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 windsor-house-price-prediction/
 │
 ├── windsor-house-prices-prediction.ipynb   # Main notebook
+├── HousePrices.csv                         # Datasets
 ├── requirements.txt                        # Python dependencies
 └── README.md
 ```
 
 ---
 
-## 📦 Dataset
+## Dataset
 
 | Property | Detail |
 |---|---|
 | Source | Kaggle — House Prices in the City of Windsor, Canada |
 | Rows | 546 transactions |
-| Features | 12 (lot size, bedrooms, bathrooms, stories, garage, amenities) |
-| Target | Sale price (USD) |
+| Features | 12 (lot size, bedrooms, bathrooms, stories, garage, amenities, etc) |
+| Target | Sale price (CAD) |
 | Price Range | $25,000 — $190,000 |
 
 ---
 
-## 🔍 Workflow
+## Workflow
 
 1. **Data Loading & Cleaning** — null handling, binary encoding of yes/no features
 2. **Exploratory Data Analysis** — price distributions, correlation heatmap, amenity impact analysis
-3. **Feature Engineering** — 5 engineered features including `lotsize_log`, `total_rooms`, `bath_bed_ratio`, `stories_x_bedrooms`, and `garage_x_aircon`
+3. **Feature Engineering** — 5 engineered features including lotsize_log, total_rooms, bath_bed_ratio, stories_x_bedrooms, and garage_x_aircon
 4. **Model Building** — four regression models trained on a 70/30 train/test split
 5. **Hyperparameter Tuning** — GridSearchCV with Pipeline for Ridge and Random Forest
 6. **Evaluation** — R², MAE, and RMSE across all models
 
 ---
 
-## 🤖 Models Used
+## Models Used
 
 | Model | Type |
 |---|---|
@@ -62,21 +63,21 @@ windsor-house-price-prediction/
 
 ---
 
-## 📈 Key Results
+## Key Results
 
 > Best Model: **Ridge Regression (GridSearchCV)**
 
 | Metric | Score |
 |---|---|
-| R² | ~0.71 |
-| MAE | ~$10,000s |
-| RMSE | Lower is better |
+| R² | 0.7132 |
+| MAE | $11,432 |
+| RMSE | $15,629 |
 
-Linear models outperformed tree-based models, confirming that Windsor house pricing follows a largely **linear relationship** with its features.
+Linear models outperformed tree-based models, confirming that Windsor house pricing follows a **linear relationship** with its features.
 
 ---
 
-## 💡 Key Findings
+## Key Findings
 
 1. **Lot size** is the single strongest predictor of price — by a large margin
 2. **Bathrooms matter more than bedrooms** — a higher bath/bed ratio is a proxy for higher-end homes
@@ -86,7 +87,18 @@ Linear models outperformed tree-based models, confirming that Windsor house pric
 
 ---
 
-## ⚙️ How to Run
+## Potential Improvements
+
+- Expand dataset size — the small sample (546) likely caps model performance
+- Add missing key features: property age, interior/exterior condition, school district, neighbourhood safety scores
+- Experiment with additional models (XGBoost, SVR)
+- Deploy as an interactive price estimator web app
+
+---
+
+## How to Run
+
+---
 
 1. **Clone the repository**
 ```bash
@@ -108,21 +120,19 @@ jupyter notebook windsor-house-prices-prediction.ipynb
 
 ---
 
-## 🛠️ Requirements
+## Requirements
 
 ```
-numpy
-pandas
-seaborn
-matplotlib
-scikit-learn
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Machine Learning Libraries
+from sklearn.preprocessing import StandardScaler
+from sklearn import preprocessing, metrics
+from sklearn.linear_model import LinearRegression, Ridge
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.pipeline import Pipeline
 ```
-
----
-
-## 🚀 Potential Improvements
-
-- Expand dataset size — the small sample (546) likely caps model performance
-- Add missing key features: property age, interior/exterior condition, school district, neighbourhood safety scores
-- Experiment with additional models (XGBoost, SVR)
-- Deploy as an interactive price estimator web app
